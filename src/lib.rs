@@ -11,3 +11,4 @@ use std::env;
 pub mod config;
 mod errors;
 pub mod db;
+pub mod routes;
