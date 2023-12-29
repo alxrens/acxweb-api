@@ -1,4 +1,4 @@
-use crate::db::post::{NewModel as NewPost, self};
+use crate::db::post::NewModel as NewPost;
 
 use crate::db::{Mutation, Query};
 
@@ -15,7 +15,7 @@ async fn list(data: web::Data<AppState>) -> Result<HttpResponse, CustomError> {
     let posts = Query::find_post_in_page(conn, 1, 10).await?;
     let posts = to_string_pretty(&posts).unwrap();
 
-    OK(HttpResponse::Ok().body(posts))
+    Ok(HttpResponse::Ok().body(posts))
 }
 
 

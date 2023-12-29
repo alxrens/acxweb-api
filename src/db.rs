@@ -1,5 +1,5 @@
 use sea_orm::{Database, DatabaseConnection, DbErr};
-use sea_orm_migration::MigrationTrait;
+use sea_orm_migration::MigratorTrait;
 
 use std::env;
 
