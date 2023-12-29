@@ -4,8 +4,8 @@ use serde_json::{json, Value};
 #[allow(dead_code)]
 pub static RESP_ROOT: Lazy<Value> = Lazy::new(|| {
     json!({
-        "post_detail_url": "http://0.0.0.0:8080/posts/{id}",
-        "post_list_url": "http://0.0.0.0:8080/posts"
+      "post_detail_url": "http://0.0.0.0:8080/posts/{id}",
+      "post_list_url": "http://0.0.0.0:8080/posts"
     })
 });
 
@@ -14,8 +14,8 @@ pub static RESP_NOTFOUND: Lazy<Value> =
     Lazy::new(|| json!({"status": 404, "message": "Not Found".to_string()}));
 
 #[allow(dead_code)]
-pub static RESP_INVALID_JSON : Lazy<Value> =
-Lazy::new(|| json!({"status":400,"error": "Invalid JSON".to_string()}));
+pub static RESP_INVALID_JSON: Lazy<Value> =
+    Lazy::new(|| json!({"status": 400, "message": "Invalid JSON Data".to_string()}));
 
 #[allow(dead_code)]
 pub static NEW_POST: Lazy<Value> = Lazy::new(|| {
@@ -26,8 +26,8 @@ pub static NEW_POST: Lazy<Value> = Lazy::new(|| {
 });
 
 #[allow(dead_code)]
-pub static NEW_POST_UPDATED: Lazy<Value> = 
-    Lazy::new(|| {json!({
+pub static NEW_POST_UPDATED: Lazy<Value> = Lazy::new(|| {
+    json!({
         "title": "test title updated",
         "text": "test text updated",
     })
@@ -37,7 +37,7 @@ pub static NEW_POST_UPDATED: Lazy<Value> =
 pub static NEW_POST_EMPTY: Lazy<Value> = Lazy::new(|| {
     json!({
         "title": "",
-        "body": "",
+        "text": "",
     })
 });
 
@@ -48,8 +48,6 @@ pub static NEW_POST_TOO_LONG: Lazy<Value> = Lazy::new(|| {
         "text": "x".repeat(65537),
     })
 });
-
-
 
 #[allow(dead_code)]
 pub static RESP_POST_EMPTY: Lazy<Value> = Lazy::new(|| {

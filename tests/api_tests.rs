@@ -9,7 +9,7 @@ mod utils;
 use utils::prelude::*;
 
 #[actix_web::test]
-async fn root(){
+async fn root() {
     let app = init_service(App::new().configure(routes::init)).await;
     let resp = TestRequest::get().uri("/").send_request(&app).await;
     assert!(resp.status().is_success());
